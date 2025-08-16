@@ -91,173 +91,70 @@ A modern cross-platform desktop application for network discovery and ping testi
 
 ### 🛠️ For Developers
 
-1. **Clone or download this repository**
-   ```bash
-   git clone https://github.com/paulohva/pingado.git
-   cd pingado
-   ```
+```bash
+# 1. Clone and setup
+git clone https://github.com/paulohva/pingado.git
+cd pingado
+npm install
 
-2. **Install dependencies**
-   ```bash
-   npm install
-   ```
+# 2. Run in development
+npm run dev
+# OR use the launch script
+./launch.sh
+```
 
-3. **Run the application**
-   ```bash
-   npm run dev
-   ```
-   OR use the launch script:
-   ```bash
-   ./launch.sh
-   ```
-
-### Detailed Setup
-
-1. **Verify Node.js installation**
-   ```bash
-   node --version  # Should be v16.0.0 or higher
-   npm --version   # Should be 8.0.0 or higher
-   ```
-
-2. **Install dependencies with verbose output** (if issues occur)
-   ```bash
-   npm install --verbose
-   ```
-
-3. **Build the application** (optional, for testing)
-   ```bash
-   npm run build
-   ```
+**Prerequisites:** Node.js 16+ and npm 8+ (see System Requirements above)
 
 ## Development
 
-### Running in Development Mode
+### Development Commands
 
 ```bash
-npm run dev
+npm run dev          # Start development with hot reload
+npm run build        # Build for production (dist/ directory)
+npm run cleanup      # Stop all webpack/electron processes
 ```
 
-This will start both the Electron main process and the React development server. The app will automatically reload when you make changes.
+### Building for Distribution
 
-### Building for Production
-
+**Quick Commands:**
 ```bash
-npm run build
-```
+# Build for current platform
+npm run dist:mac    # or dist:win, dist:linux
 
-### Creating Distribution Packages
-
-#### Quick Build (All Platforms)
-```bash
-npm run dist
-```
-
-#### Platform-Specific Builds
-```bash
-# Windows only
-npm run dist:win
-
-# macOS only  
-npm run dist:mac
-
-# Linux only
-npm run dist:linux
-
-# All platforms
+# Build for all platforms  
 npm run dist:all
+
+# Using build scripts (recommended - with progress & error handling)
+./build.sh -p macos    # Unix/macOS/Linux
+build.bat -p windows   # Windows
 ```
 
-#### Using Build Scripts (Recommended)
+**Build Script Options:**
+- `-p <platform>` - windows, macos, linux, or all
+- `--skip-deps` - Skip dependency installation (faster rebuilds)
+- `--help` - Show all options
 
-**Unix/Linux/macOS:**
+#### Testing Built Applications
+
+After building, test your applications directly from the `release/` directory:
+
 ```bash
-# Build for all platforms
-./build.sh
+# macOS
+open release/mac-arm64/Pingado.app     # Apple Silicon
+open release/mac/Pingado.app           # Intel
 
-# Build for specific platform
-./build.sh -p windows
-./build.sh -p macos
-./build.sh -p linux
+# Windows  
+release\Pingado-X.X.X.exe              # Portable
 
-# Skip dependency installation (faster rebuilds)
-./build.sh --skip-deps
-
-# Show help
-./build.sh --help
+# Linux
+chmod +x release/Pingado-X.X.X.AppImage && ./release/Pingado-X.X.X.AppImage
 ```
 
-**Windows:**
-```cmd
-REM Build for all platforms
-build.bat
-
-REM Build for specific platform
-build.bat -p windows
-build.bat -p macos
-build.bat -p linux
-
-REM Skip dependency installation
-build.bat --skip-deps
-
-REM Show help
-build.bat --help
-```
-
-#### Build Output
-
-This will create platform-specific installers in the `release/` directory:
-
-**Windows:**
-- `Pingado Setup X.X.X.exe` - NSIS installer
-- `Pingado X.X.X.exe` - Portable executable
-
-**macOS:**
-- `Pingado-X.X.X.dmg` - Disk image installer (Intel)
-- `Pingado-X.X.X-arm64.dmg` - Disk image installer (Apple Silicon)
-- `Pingado-X.X.X-mac.zip` - ZIP archive (Intel)
-- `Pingado-X.X.X-arm64-mac.zip` - ZIP archive (Apple Silicon)
-
-**Linux:**
-- `Pingado-X.X.X.AppImage` - Portable AppImage
-- `pingado_X.X.X_amd64.deb` - Debian package
-- `pingado-X.X.X.x86_64.rpm` - RPM package
-
-#### Running Locally Built Applications
-
-After building, you can run the applications directly:
-
-**macOS:**
-```bash
-# For Apple Silicon Macs (M1/M2/M3)
-open release/mac-arm64/Pingado.app
-
-# For Intel Macs
-open release/mac/Pingado.app
-
-# Or install from DMG
-open release/Pingado-X.X.X-arm64.dmg  # Apple Silicon
-open release/Pingado-X.X.X.dmg        # Intel
-```
-
-**Windows:**
-```cmd
-# Run the portable executable
-release\Pingado-X.X.X.exe
-
-# Or install from setup
-release\Pingado Setup X.X.X.exe
-```
-
-**Linux:**
-```bash
-# Run AppImage directly
-chmod +x release/Pingado-X.X.X.AppImage
-./release/Pingado-X.X.X.AppImage
-
-# Or install package
-sudo dpkg -i release/pingado_X.X.X_amd64.deb  # Debian/Ubuntu
-sudo rpm -i release/pingado-X.X.X.x86_64.rpm  # RedHat/CentOS
-```
+**Distribution Files Created:**
+- **Windows**: Setup installer + portable executable
+- **macOS**: DMG installers + ZIP archives (Intel & Apple Silicon)
+- **Linux**: AppImage + DEB + RPM packages
 
 ## Usage
 
@@ -305,13 +202,7 @@ sudo rpm -i release/pingado-X.X.X.x86_64.rpm  # RedHat/CentOS
 - **No external connections** - Only local network scanning and ping
 - **Open source** - Full source code available for security review
 
-## Development Scripts
 
-- `npm run dev` - Start development environment
-- `npm run build` - Build for production
-- `npm run dist` - Create distribution packages
-- `npm run pack` - Create unpacked distribution
-- `npm start` - Start the built application
 
 ## Troubleshooting
 
