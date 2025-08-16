@@ -1,11 +1,11 @@
 {
   "name": "pingado",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Cross-platform network scanner and ping utility",
   "main": "dist/main.js",
   "scripts": {
     "start": "electron .",
-    "dev": "npm run cleanup && npm run build:main && concurrently \"npm run dev:renderer\" \"npm run dev:main\" \"npm run start:electron\"",
+    "dev": "npm run build:main && concurrently \"npm run dev:renderer\" \"npm run dev:main\" \"npm run start:electron\"",
     "dev:renderer": "webpack serve --config webpack.renderer.js --mode development",
     "dev:main": "webpack --config webpack.main.js --mode development --watch",
     "start:electron": "wait-on dist/main.js && cross-env NODE_ENV=development electron .",
