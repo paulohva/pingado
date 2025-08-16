@@ -374,11 +374,19 @@ Feel free to reach out if you need help getting started!
 
 ## 📝 Changelog
 
-### v1.0.0 (Latest) ☕
+### v1.0.1 (Latest) ☕
+- ✨ **Enhanced Branding Release**
+- ✅ Beautiful custom coffee mug icon with cultural Portuguese identity
+- ✅ Professional React UI integration with coffee mug branding
+- ✅ Real application screenshots in documentation
+- ✅ Comprehensive README with user and developer guides
+- ✅ Complete icon package (SVG, PNG, ICO, ICNS) for all platforms
+- ✅ Enhanced visual identity and professional presentation
+
+### v1.0.0 ☕
 - 🎉 **Initial Release**
 - ✅ Cross-platform network scanning and ping functionality
 - ✅ Modern React + TypeScript UI
-- ✅ Custom coffee mug icon representing "pingado" (coffee with milk)
 - ✅ Comprehensive build system for Windows, macOS, and Linux
 - ✅ Professional installers and portable versions
 - ✅ Complete documentation and troubleshooting guides
