@@ -379,17 +379,8 @@ We welcome contributions! Here's how you can help:
 6. Open a Pull Request with a detailed description
 
 ### 📋 Development Setup
-```bash
-# Clone your fork
-git clone https://github.com/yourusername/pingado.git
-cd pingado
 
-# Install dependencies
-npm install
-
-# Start development
-npm run dev
-```
+For complete development setup instructions, system requirements, and technical details, see the **[🛠️ For Developers](#-for-developers)** section above.
 
 ### 🧪 Testing
 - Test on your target platforms
