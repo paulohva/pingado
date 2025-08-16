@@ -62,17 +62,14 @@
     "appId": "com.pingado.networkscanner",
     "productName": "Pingado",
     "copyright": "Copyright © 2024 Pingado",
+    "asar": true,
     "directories": {
       "output": "release",
       "buildResources": "build"
     },
     "files": [
       "dist/**/*",
-      "!dist/*.d.ts",
-      "node_modules/**/*",
-      "!node_modules/.cache/**/*",
-      "!node_modules/@types/**/*",
-      "!node_modules/typescript/**/*"
+      "!dist/*.d.ts"
     ],
     "extraResources": [
       {
