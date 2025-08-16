@@ -212,13 +212,52 @@ This will create platform-specific installers in the `release/` directory:
 - `Pingado X.X.X.exe` - Portable executable
 
 **macOS:**
-- `Pingado-X.X.X.dmg` - Disk image installer
-- `Pingado-X.X.X-mac.zip` - ZIP archive
+- `Pingado-X.X.X.dmg` - Disk image installer (Intel)
+- `Pingado-X.X.X-arm64.dmg` - Disk image installer (Apple Silicon)
+- `Pingado-X.X.X-mac.zip` - ZIP archive (Intel)
+- `Pingado-X.X.X-arm64-mac.zip` - ZIP archive (Apple Silicon)
 
 **Linux:**
 - `Pingado-X.X.X.AppImage` - Portable AppImage
 - `pingado_X.X.X_amd64.deb` - Debian package
 - `pingado-X.X.X.x86_64.rpm` - RPM package
+
+#### Running Locally Built Applications
+
+After building, you can run the applications directly:
+
+**macOS:**
+```bash
+# For Apple Silicon Macs (M1/M2/M3)
+open release/mac-arm64/Pingado.app
+
+# For Intel Macs
+open release/mac/Pingado.app
+
+# Or install from DMG
+open release/Pingado-X.X.X-arm64.dmg  # Apple Silicon
+open release/Pingado-X.X.X.dmg        # Intel
+```
+
+**Windows:**
+```cmd
+# Run the portable executable
+release\Pingado-X.X.X.exe
+
+# Or install from setup
+release\Pingado Setup X.X.X.exe
+```
+
+**Linux:**
+```bash
+# Run AppImage directly
+chmod +x release/Pingado-X.X.X.AppImage
+./release/Pingado-X.X.X.AppImage
+
+# Or install package
+sudo dpkg -i release/pingado_X.X.X_amd64.deb  # Debian/Ubuntu
+sudo rpm -i release/pingado-X.X.X.x86_64.rpm  # RedHat/CentOS
+```
 
 ## Usage
 
