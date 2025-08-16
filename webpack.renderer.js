@@ -9,7 +9,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'renderer.js',
-    clean: true,
+    clean: false,
   },
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.jsx'],
