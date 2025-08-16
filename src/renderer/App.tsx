@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { NetworkInterface } from './types';
+import iconSvg from './icon.svg';
 
 const App: React.FC = () => {
   const [networkInterfaces, setNetworkInterfaces] = useState<NetworkInterface[]>([]);
@@ -83,7 +84,10 @@ const App: React.FC = () => {
   return (
     <div className="app">
       <div className="header">
-        <h1>🌐 Pingado</h1>
+        <h1>
+          <img src={iconSvg} alt="Pingado" className="app-icon" />
+          Pingado
+        </h1>
         <p>Network Scanner & Ping Utility</p>
       </div>
 

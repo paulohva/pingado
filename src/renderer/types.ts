@@ -17,3 +17,9 @@ declare global {
     electronAPI: ElectronAPI;
   }
 }
+
+// SVG module declaration for TypeScript
+declare module '*.svg' {
+  const content: string;
+  export default content;
+}
