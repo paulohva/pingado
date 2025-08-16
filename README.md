@@ -6,48 +6,117 @@
 
 <br clear="left"/>
 
-A modern cross-platform desktop application for network discovery and ping testing, built with Electron, React, and TypeScript.
-
-**"Pingado"** is Portuguese for *coffee with milk* ☕ - representing the perfect blend of simplicity and power in network utilities.
-
-> 🚀 **Ready for production use!** Download the latest release for your platform from the [Releases page](https://github.com/paulohva/pingado/releases).
+A modern cross-platform desktop application for network discovery and ping testing. **"Pingado"** is Portuguese for *coffee with milk* ☕ - representing the perfect blend of simplicity and power in network utilities.
 
 ![Pingado Screenshot](assets/screenshots/app-main-window-800x500.png)
 
-## Features
+## 📥 Download & Install
 
-- 🔍 **Network Discovery**: Automatically detect and scan your local network interfaces
-- 🌐 **IP Scanning**: Discover all active devices on your local network
-- 🏓 **Ping Tool**: Test connectivity to any IP address with customizable ping count
-- 📊 **Network Statistics**: View detailed information about your network and scan results
-- 🎨 **Modern UI**: Beautiful, responsive interface with real-time updates
-- 💻 **Cross-Platform**: Works on Windows, macOS, and Linux
+> 🚀 **Ready to use!** Just download and install - no technical setup required.
+
+### 🖥️ Choose Your Platform
+
+| Platform | Download | Installation |
+|----------|----------|--------------|
+| **🪟 Windows** | [Download Installer](https://github.com/paulohva/pingado/releases) | Run `Pingado-Setup-X.X.X.exe` |
+| **🍎 macOS** | [Download DMG](https://github.com/paulohva/pingado/releases) | Open `.dmg` and drag to Applications |
+| **🐧 Linux** | [Download AppImage](https://github.com/paulohva/pingado/releases) | Make executable and run |
+
+### 📦 Installation Types
+
+**Windows:**
+- **🔧 Installer** (`Pingado-Setup-X.X.X.exe`) - Installs to Program Files with shortcuts
+- **📦 Portable** (`Pingado-X.X.X.exe`) - No installation needed, run directly
+
+**macOS:**
+- **💿 DMG Package** (`Pingado-X.X.X.dmg`) - Standard macOS installer
+- **📁 ZIP Archive** (`Pingado-X.X.X.zip`) - Extract and drag to Applications
+
+**Linux:**
+- **🚀 AppImage** (`Pingado-X.X.X.AppImage`) - Universal, no installation needed
+- **📦 DEB Package** (`pingado_X.X.X_amd64.deb`) - For Debian/Ubuntu: `sudo dpkg -i filename.deb`
+- **📦 RPM Package** (`pingado-X.X.X.x86_64.rpm`) - For RedHat/CentOS: `sudo rpm -i filename.rpm`
 
 ## 🚀 Quick Start
 
-1. **Download** the appropriate installer for your platform from [Releases](https://github.com/paulohva/pingado/releases)
-2. **Install** by running the installer or extracting the portable version
-3. **Launch** Pingado from your Applications folder or desktop
-4. **Click "Scan Network"** to discover devices on your local network
-5. **Select an IP** and click "Ping" to test connectivity
+1. **📥 Download** from the links above
+2. **⚡ Install** using your platform's method
+3. **🎯 Launch** Pingado from your Applications/Start Menu
+4. **🔍 Click "Scan Network"** to discover devices
+5. **🏓 Select an IP** and click "Ping" to test connectivity
 
-## System Requirements
+## ✨ Features
 
-### Operating System Support
+- 🔍 **Network Discovery**: Automatically find all devices on your local network
+- 🌐 **IP Scanning**: See what's connected to your WiFi/network
+- 🏓 **Ping Tool**: Test if websites or devices are reachable
+- 📊 **Network Info**: View your network details and statistics  
+- 🎨 **Modern Interface**: Clean, easy-to-use design
+- 💻 **Works Everywhere**: Windows, macOS, and Linux support
+
+## 🎯 How to Use
+
+### Find Devices on Your Network
+1. Open Pingado
+2. Click **"Scan Network"** 
+3. Wait for the scan to complete
+4. See all connected devices in the list
+
+### Test Internet/Device Connection
+1. Enter an IP address (like `8.8.8.8` for Google DNS)
+2. Or click on a device from your network scan
+3. Choose how many pings to send (1-10)
+4. Click **"Ping"** to test the connection
+5. View the results showing response times
+
+## ❓ Troubleshooting
+
+### Common Issues
+
+**🚫 App won't start?**
+- Make sure you downloaded the right version for your operating system
+- On macOS: Right-click the app and select "Open" if Gatekeeper blocks it
+- On Windows: Windows Defender might flag it - click "More info" then "Run anyway"
+- On Linux: Make the AppImage executable: `chmod +x Pingado-*.AppImage`
+
+**🔍 Network scan not working?**
+- Make sure you're connected to WiFi or ethernet
+- Some devices might be hidden or not respond to ping
+- Try running as administrator/sudo if needed
+
+**🏓 Ping not working?**
+- Check if the IP address is correct
+- Some websites/devices block ping requests
+- Firewall might be blocking the ping command
+
+**💻 Still need help?**
+- Check our [Issues page](https://github.com/paulohva/pingado/issues) for solutions
+- Create a new issue with your problem description
+
+---
+
+## 🛠️ For Developers
+
+<details>
+<summary><strong>📋 Development Setup & Technical Details</strong></summary>
+
+### System Requirements
+
+#### Operating System Support
 - ✅ **macOS** 10.13 (High Sierra) or later
 - ✅ **Windows** 10 or later (Windows 11 recommended)
 - ✅ **Linux** Ubuntu 18.04+, Fedora 32+, or equivalent
 
-### Software Prerequisites
+#### Software Prerequisites
 
-#### Required
+**Required:**
 - **Node.js** version 16.x or higher (18.x+ recommended)
   - Download from [nodejs.org](https://nodejs.org/)
   - Verify: `node --version` should show v16.0.0 or higher
 - **npm** version 8.x or higher (included with Node.js)
   - Verify: `npm --version` should show 8.0.0 or higher
 
-#### Platform-Specific Requirements
+**Platform-Specific Requirements:**
 
 **macOS:**
 - Xcode Command Line Tools: `xcode-select --install`
@@ -62,34 +131,7 @@ A modern cross-platform desktop application for network discovery and ping testi
 - Python 3.x and pip
 - libgtk-3-dev: `sudo apt-get install libgtk-3-dev`
 
-### Network Requirements
-- **Ping command** must be available in system PATH
-  - macOS/Linux: Built-in
-  - Windows: Built-in (cmd: `ping`, PowerShell: `Test-NetConnection`)
-- **Local network access** for network scanning functionality
-- **Firewall permissions** may be required for ping operations
-
-## 📥 Installation
-
-### 🚀 For End Users (Recommended)
-
-**Download pre-built applications from the [Releases page](https://github.com/paulohva/pingado/releases):**
-
-#### macOS
-- **Intel Macs**: Download `Pingado-X.X.X.dmg` 
-- **Apple Silicon (M1/M2/M3)**: Download `Pingado-X.X.X-arm64.dmg`
-- **Portable versions**: Download `.zip` files (no installation required)
-
-#### Windows
-- **Installer**: Download `Pingado Setup X.X.X.exe`
-- **Portable**: Download `Pingado X.X.X.exe`
-
-#### Linux
-- **AppImage**: Download `Pingado-X.X.X.AppImage` (universal)
-- **Debian/Ubuntu**: Download `.deb` package
-- **RedHat/CentOS**: Download `.rpm` package
-
-### 🛠️ For Developers
+### Installation for Development
 
 ```bash
 # 1. Clone and setup
@@ -104,8 +146,6 @@ npm run dev
 ```
 
 **Prerequisites:** Node.js 16+ and npm 8+ (see System Requirements above)
-
-## Development
 
 ### Development Commands
 
@@ -164,44 +204,22 @@ chmod +x release/Pingado-X.X.X.AppImage && ./release/Pingado-X.X.X.AppImage
 - **macOS**: DMG installers + ZIP archives (Intel & Apple Silicon)
 - **Linux**: AppImage + DEB + RPM packages
 
-## Usage
+### Technical Details
 
-### Network Discovery
-
-1. **Select Network Interface**: Choose from your available network interfaces
-2. **Scan Network**: Click "Scan Network" to discover all active devices
-3. **View Results**: See all discovered IP addresses in the list
-
-### Ping Testing
-
-1. **Select Target**: Either click an IP from the discovered list or enter a custom IP
-2. **Set Ping Count**: Choose how many ping packets to send (1-10)
-3. **Start Ping**: Click "Ping" to test connectivity
-4. **View Results**: See detailed ping statistics in the terminal-style output
-
-### Features
-
-- **Real-time Scanning**: Network discovery happens in real-time with progress indicators
-- **Cross-platform Compatibility**: Uses appropriate ping commands for each operating system
-- **Responsive Design**: Works well on different screen sizes
-- **Network Statistics**: View comprehensive information about your network setup
-
-## Technical Details
-
-### Architecture
+#### Architecture
 
 - **Frontend**: React with TypeScript for the user interface
 - **Backend**: Electron main process handles system operations
 - **IPC Communication**: Secure communication between renderer and main processes
 - **Network Operations**: Uses system ping commands for maximum compatibility
 
-### Platform Support
+#### Platform Support
 
 - **Windows**: Uses `ping -n` command
 - **macOS/Linux**: Uses `ping -c` command
 - **All Platforms**: Automatic network interface detection
 
-### Security & Privacy
+#### Security & Privacy
 
 - **Context isolation enabled** - Renderer process runs in isolated context
 - **Node integration disabled** - Prevents direct Node.js access from renderer
@@ -210,11 +228,9 @@ chmod +x release/Pingado-X.X.X.AppImage && ./release/Pingado-X.X.X.AppImage
 - **No external connections** - Only local network scanning and ping
 - **Open source** - Full source code available for security review
 
+### Advanced Troubleshooting
 
-
-## Troubleshooting
-
-### Launch Script Issues
+#### Launch Script Issues
 
 **macOS/Linux:**
 ```bash
@@ -236,8 +252,6 @@ bash launch.sh
 # Or run directly:
 npm run dev
 ```
-
-### Common Issues
 
 #### Installation Problems
 1. **Node.js Version Error**
@@ -306,7 +320,7 @@ npm run dev
    - Look for error messages in terminal
    - Try: `npm run cleanup && npm run dev`
 
-### Platform-Specific Notes
+#### Platform-Specific Notes
 
 **Windows:**
 - May require running as Administrator for network operations
@@ -323,7 +337,7 @@ npm run dev
 - AppImage format for distribution
 - May need to install additional GTK dependencies
 
-### Getting Help
+#### Getting Help
 
 If you encounter issues:
 1. Check the console output for error messages
@@ -339,6 +353,8 @@ npm run dev --verbose
 # Check webpack compilation
 npm run build
 ```
+
+</details>
 
 ## 🤝 Contributing
 
