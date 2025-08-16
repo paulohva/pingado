@@ -109,14 +109,78 @@ npm run build
 
 ### Creating Distribution Packages
 
+#### Quick Build (All Platforms)
 ```bash
 npm run dist
 ```
 
-This will create platform-specific installers in the `release` directory:
-- Windows: `.exe` installer
-- macOS: `.dmg` file
-- Linux: `.AppImage` file
+#### Platform-Specific Builds
+```bash
+# Windows only
+npm run dist:win
+
+# macOS only  
+npm run dist:mac
+
+# Linux only
+npm run dist:linux
+
+# All platforms
+npm run dist:all
+```
+
+#### Using Build Scripts (Recommended)
+
+**Unix/Linux/macOS:**
+```bash
+# Build for all platforms
+./build.sh
+
+# Build for specific platform
+./build.sh -p windows
+./build.sh -p macos
+./build.sh -p linux
+
+# Skip dependency installation (faster rebuilds)
+./build.sh --skip-deps
+
+# Show help
+./build.sh --help
+```
+
+**Windows:**
+```cmd
+REM Build for all platforms
+build.bat
+
+REM Build for specific platform
+build.bat -p windows
+build.bat -p macos
+build.bat -p linux
+
+REM Skip dependency installation
+build.bat --skip-deps
+
+REM Show help
+build.bat --help
+```
+
+#### Build Output
+
+This will create platform-specific installers in the `release/` directory:
+
+**Windows:**
+- `Pingado Setup X.X.X.exe` - NSIS installer
+- `Pingado X.X.X.exe` - Portable executable
+
+**macOS:**
+- `Pingado-X.X.X.dmg` - Disk image installer
+- `Pingado-X.X.X-mac.zip` - ZIP archive
+
+**Linux:**
+- `Pingado-X.X.X.AppImage` - Portable AppImage
+- `pingado_X.X.X_amd64.deb` - Debian package
+- `pingado-X.X.X.x86_64.rpm` - RPM package
 
 ## Usage
 
