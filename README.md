@@ -1,10 +1,14 @@
-# 🌐 Pingado - Cross-Platform Network Scanner & Ping Utility
+# <img src="assets/icon.svg" alt="Pingado Icon" width="64" height="64" align="left"> Pingado - Cross-Platform Network Scanner & Ping Utility
 
 [![Release](https://img.shields.io/github/v/release/paulohva/pingado)](https://github.com/paulohva/pingado/releases)
 [![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux-lightgrey)](https://github.com/paulohva/pingado/releases)
 [![License](https://img.shields.io/github/license/paulohva/pingado)](LICENSE)
 
+<br clear="left"/>
+
 A modern cross-platform desktop application for network discovery and ping testing, built with Electron, React, and TypeScript.
+
+**"Pingado"** is Portuguese for *coffee with milk* ☕ - representing the perfect blend of simplicity and power in network utilities.
 
 > 🚀 **Ready for production use!** Download the latest release for your platform from the [Releases page](https://github.com/paulohva/pingado/releases).
 
@@ -440,10 +444,11 @@ Feel free to reach out if you need help getting started!
 
 ## 📝 Changelog
 
-### v1.0.0 (Latest)
+### v1.0.0 (Latest) ☕
 - 🎉 **Initial Release**
 - ✅ Cross-platform network scanning and ping functionality
 - ✅ Modern React + TypeScript UI
+- ✅ Custom coffee mug icon representing "pingado" (coffee with milk)
 - ✅ Comprehensive build system for Windows, macOS, and Linux
 - ✅ Professional installers and portable versions
 - ✅ Complete documentation and troubleshooting guides
