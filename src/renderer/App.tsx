@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { NetworkInterface } from './types';
 import iconSvg from './icon.svg';
+import pingSound from '../../assets/ping-sound.mp3';
 
 const App: React.FC = () => {
   const [networkInterfaces, setNetworkInterfaces] = useState<NetworkInterface[]>([]);
@@ -54,12 +55,28 @@ const App: React.FC = () => {
     }
   };
 
+  const playPingSound = () => {
+    try {
+      const audio = new Audio(pingSound);
+      audio.volume = 0.3; // Set volume to 30% to avoid being too loud
+      audio.play().catch(error => {
+        console.log('Could not play ping sound:', error);
+        // Silently fail - sound is a nice-to-have feature
+      });
+    } catch (error) {
+      console.log('Could not create audio element:', error);
+    }
+  };
+
   const handlePing = async () => {
     const targetIP = selectedIP || customIP;
     if (!targetIP) return;
 
     setIsPinging(true);
     setPingResults('');
+
+    // Play sound when ping starts
+    playPingSound();
 
     try {
       const result = await window.electronAPI.pingHost(targetIP, pingCount);
