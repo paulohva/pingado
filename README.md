@@ -1,14 +1,18 @@
-# 🌐 Pingado - Cross-Platform Network Scanner & Ping Utility
+# <img src="assets/icon.svg" alt="Pingado Icon" width="64" height="64" align="left"> Pingado - Cross-Platform Network Scanner & Ping Utility
 
 [![Release](https://img.shields.io/github/v/release/paulohva/pingado)](https://github.com/paulohva/pingado/releases)
 [![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux-lightgrey)](https://github.com/paulohva/pingado/releases)
 [![License](https://img.shields.io/github/license/paulohva/pingado)](LICENSE)
 
+<br clear="left"/>
+
 A modern cross-platform desktop application for network discovery and ping testing, built with Electron, React, and TypeScript.
+
+**"Pingado"** is Portuguese for *coffee with milk* ☕ - representing the perfect blend of simplicity and power in network utilities.
 
 > 🚀 **Ready for production use!** Download the latest release for your platform from the [Releases page](https://github.com/paulohva/pingado/releases).
 
-![Pingado Screenshot](https://via.placeholder.com/800x500/667eea/ffffff?text=Pingado+Network+Scanner)
+![Pingado Screenshot](assets/screenshots/app-main-window-800x500.png)
 
 ## Features
 
@@ -87,134 +91,70 @@ A modern cross-platform desktop application for network discovery and ping testi
 
 ### 🛠️ For Developers
 
-1. **Clone or download this repository**
-   ```bash
-   git clone https://github.com/paulohva/pingado.git
-   cd pingado
-   ```
+```bash
+# 1. Clone and setup
+git clone https://github.com/paulohva/pingado.git
+cd pingado
+npm install
 
-2. **Install dependencies**
-   ```bash
-   npm install
-   ```
+# 2. Run in development
+npm run dev
+# OR use the launch script
+./launch.sh
+```
 
-3. **Run the application**
-   ```bash
-   npm run dev
-   ```
-   OR use the launch script:
-   ```bash
-   ./launch.sh
-   ```
-
-### Detailed Setup
-
-1. **Verify Node.js installation**
-   ```bash
-   node --version  # Should be v16.0.0 or higher
-   npm --version   # Should be 8.0.0 or higher
-   ```
-
-2. **Install dependencies with verbose output** (if issues occur)
-   ```bash
-   npm install --verbose
-   ```
-
-3. **Build the application** (optional, for testing)
-   ```bash
-   npm run build
-   ```
+**Prerequisites:** Node.js 16+ and npm 8+ (see System Requirements above)
 
 ## Development
 
-### Running in Development Mode
+### Development Commands
 
 ```bash
-npm run dev
+npm run dev          # Start development with hot reload
+npm run build        # Build for production (dist/ directory)
+npm run cleanup      # Stop all webpack/electron processes
 ```
 
-This will start both the Electron main process and the React development server. The app will automatically reload when you make changes.
+### Building for Distribution
 
-### Building for Production
-
+**Quick Commands:**
 ```bash
-npm run build
-```
+# Build for current platform
+npm run dist:mac    # or dist:win, dist:linux
 
-### Creating Distribution Packages
-
-#### Quick Build (All Platforms)
-```bash
-npm run dist
-```
-
-#### Platform-Specific Builds
-```bash
-# Windows only
-npm run dist:win
-
-# macOS only  
-npm run dist:mac
-
-# Linux only
-npm run dist:linux
-
-# All platforms
+# Build for all platforms  
 npm run dist:all
+
+# Using build scripts (recommended - with progress & error handling)
+./build.sh -p macos    # Unix/macOS/Linux
+build.bat -p windows   # Windows
 ```
 
-#### Using Build Scripts (Recommended)
+**Build Script Options:**
+- `-p <platform>` - windows, macos, linux, or all
+- `--skip-deps` - Skip dependency installation (faster rebuilds)
+- `--help` - Show all options
 
-**Unix/Linux/macOS:**
+#### Testing Built Applications
+
+After building, test your applications directly from the `release/` directory:
+
 ```bash
-# Build for all platforms
-./build.sh
+# macOS
+open release/mac-arm64/Pingado.app     # Apple Silicon
+open release/mac/Pingado.app           # Intel
 
-# Build for specific platform
-./build.sh -p windows
-./build.sh -p macos
-./build.sh -p linux
+# Windows  
+release\Pingado-X.X.X.exe              # Portable
 
-# Skip dependency installation (faster rebuilds)
-./build.sh --skip-deps
-
-# Show help
-./build.sh --help
+# Linux
+chmod +x release/Pingado-X.X.X.AppImage && ./release/Pingado-X.X.X.AppImage
 ```
 
-**Windows:**
-```cmd
-REM Build for all platforms
-build.bat
-
-REM Build for specific platform
-build.bat -p windows
-build.bat -p macos
-build.bat -p linux
-
-REM Skip dependency installation
-build.bat --skip-deps
-
-REM Show help
-build.bat --help
-```
-
-#### Build Output
-
-This will create platform-specific installers in the `release/` directory:
-
-**Windows:**
-- `Pingado Setup X.X.X.exe` - NSIS installer
-- `Pingado X.X.X.exe` - Portable executable
-
-**macOS:**
-- `Pingado-X.X.X.dmg` - Disk image installer
-- `Pingado-X.X.X-mac.zip` - ZIP archive
-
-**Linux:**
-- `Pingado-X.X.X.AppImage` - Portable AppImage
-- `pingado_X.X.X_amd64.deb` - Debian package
-- `pingado-X.X.X.x86_64.rpm` - RPM package
+**Distribution Files Created:**
+- **Windows**: Setup installer + portable executable
+- **macOS**: DMG installers + ZIP archives (Intel & Apple Silicon)
+- **Linux**: AppImage + DEB + RPM packages
 
 ## Usage
 
@@ -262,13 +202,7 @@ This will create platform-specific installers in the `release/` directory:
 - **No external connections** - Only local network scanning and ping
 - **Open source** - Full source code available for security review
 
-## Development Scripts
 
-- `npm run dev` - Start development environment
-- `npm run build` - Build for production
-- `npm run dist` - Create distribution packages
-- `npm run pack` - Create unpacked distribution
-- `npm start` - Start the built application
 
 ## Troubleshooting
 
@@ -440,10 +374,11 @@ Feel free to reach out if you need help getting started!
 
 ## 📝 Changelog
 
-### v1.0.0 (Latest)
+### v1.0.0 (Latest) ☕
 - 🎉 **Initial Release**
 - ✅ Cross-platform network scanning and ping functionality
 - ✅ Modern React + TypeScript UI
+- ✅ Custom coffee mug icon representing "pingado" (coffee with milk)
 - ✅ Comprehensive build system for Windows, macOS, and Linux
 - ✅ Professional installers and portable versions
 - ✅ Complete documentation and troubleshooting guides
