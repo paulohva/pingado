@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <!-- Coffee mug with gradient representing "pingado" (coffee with milk) -->
+  <defs>
+    <!-- Coffee gradient (dark to light brown) -->
+    <linearGradient id="coffeeGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#8B4513;stop-opacity:1" />
+      <stop offset="30%" style="stop-color:#A0522D;stop-opacity:1" />
+      <stop offset="70%" style="stop-color:#D2B48C;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#F5DEB3;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Mug body gradient -->
+    <linearGradient id="mugGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFFFFF;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#F0F0F0;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#E0E0E0;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Handle gradient -->
+    <linearGradient id="handleGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#F8F8F8;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#D0D0D0;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Steam gradient -->
+    <linearGradient id="steamGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFFFFF;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#FFFFFF;stop-opacity:0.1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background circle for app icon -->
+  <circle cx="256" cy="256" r="240" fill="url(#coffeeGradient)" stroke="#8B4513" stroke-width="8"/>
+  
+  <!-- Mug body -->
+  <ellipse cx="256" cy="320" rx="120" ry="140" fill="url(#mugGradient)" stroke="#C0C0C0" stroke-width="3"/>
+  
+  <!-- Coffee surface (pingado effect) -->
+  <ellipse cx="256" cy="200" rx="110" ry="20" fill="url(#coffeeGradient)"/>
+  
+  <!-- Mug handle -->
+  <path d="M 376 280 Q 420 280 420 320 Q 420 360 376 360" 
+        fill="none" 
+        stroke="url(#handleGradient)" 
+        stroke-width="16" 
+        stroke-linecap="round"/>
+  
+  <!-- Inner handle shadow -->
+  <path d="M 380 290 Q 410 290 410 320 Q 410 350 380 350" 
+        fill="none" 
+        stroke="#B0B0B0" 
+        stroke-width="8" 
+        stroke-linecap="round"/>
+  
+  <!-- Steam wisps -->
+  <path d="M 220 180 Q 225 160 220 140 Q 215 120 220 100" 
+        fill="none" 
+        stroke="url(#steamGradient)" 
+        stroke-width="4" 
+        stroke-linecap="round"/>
+  
+  <path d="M 256 180 Q 261 160 256 140 Q 251 120 256 100" 
+        fill="none" 
+        stroke="url(#steamGradient)" 
+        stroke-width="4" 
+        stroke-linecap="round"/>
+  
+  <path d="M 292 180 Q 297 160 292 140 Q 287 120 292 100" 
+        fill="none" 
+        stroke="url(#steamGradient)" 
+        stroke-width="4" 
+        stroke-linecap="round"/>
+  
+  <!-- Highlight on mug -->
+  <ellipse cx="230" cy="250" rx="25" ry="40" fill="#FFFFFF" opacity="0.3"/>
+  
+  <!-- Network connection dots (subtle ping reference) -->
+  <circle cx="200" cy="380" r="4" fill="#667eea" opacity="0.6"/>
+  <circle cx="220" cy="390" r="3" fill="#667eea" opacity="0.4"/>
+  <circle cx="240" cy="385" r="2" fill="#667eea" opacity="0.3"/>
+</svg>

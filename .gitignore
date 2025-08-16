@@ -7,9 +7,12 @@ yarn-error.log*
 # Build outputs
 dist/
 release/
-build/*.icns
-build/*.ico
-build/*.png
+
+# Build directory - allow actual icons, ignore generated folders
+build/icons/
+!build/icon.icns
+!build/icon.ico
+!build/icon.png
 !build/README.md
 
 # Environment variables
