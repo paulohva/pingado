@@ -12,7 +12,7 @@ A modern cross-platform desktop application for network discovery and ping testi
 
 > 🚀 **Ready for production use!** Download the latest release for your platform from the [Releases page](https://github.com/paulohva/pingado/releases).
 
-![Pingado Screenshot](https://via.placeholder.com/800x500/667eea/ffffff?text=Pingado+Network+Scanner)
+![Pingado Screenshot](assets/screenshots/app-main-window-800x500.png)
 
 ## Features
 
