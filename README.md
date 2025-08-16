@@ -391,7 +391,15 @@ Feel free to reach out if you need help getting started!
 
 ## 📝 Changelog
 
-### v1.0.2 (Latest) ☕
+### v1.0.3 (Latest) ☕
+- 🔊 **Sound Effects & User Experience**
+- ✅ Added ping sound effect for better user feedback
+- ✅ Optimized audio file (20KB MP3) for fast loading
+- ✅ 30% volume level to avoid being jarring
+- ✅ Graceful fallback if audio playback fails
+- ✅ Enhanced webpack configuration for audio files
+
+### v1.0.2 ☕
 - 🔧 **Cross-Platform Improvements**
 - ✅ Fixed Windows compatibility issues with cleanup command
 - ✅ Enhanced README with better platform separation (Linux/Mac vs Windows)
