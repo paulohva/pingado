@@ -126,8 +126,12 @@ npm run dist:mac    # or dist:win, dist:linux
 npm run dist:all
 
 # Using build scripts (recommended - with progress & error handling)
-./build.sh -p macos    # Unix/macOS/Linux
-build.bat -p windows   # Windows
+
+# Unix/macOS/Linux
+./build.sh -p macos
+
+# Windows (works with new Windows Terminal and Git Bash)  
+./build.bat -p windows
 ```
 
 **Build Script Options:**
@@ -139,16 +143,20 @@ build.bat -p windows   # Windows
 
 After building, test your applications directly from the `release/` directory:
 
+**macOS & Linux:**
 ```bash
 # macOS
 open release/mac-arm64/Pingado.app     # Apple Silicon
 open release/mac/Pingado.app           # Intel
 
-# Windows  
-release\Pingado-X.X.X.exe              # Portable
-
 # Linux
 chmod +x release/Pingado-X.X.X.AppImage && ./release/Pingado-X.X.X.AppImage
+```
+
+**Windows:**
+```bash
+# Windows (works with new Windows Terminal and Git Bash)
+./release/Pingado-X.X.X.exe            # Portable executable
 ```
 
 **Distribution Files Created:**
@@ -221,8 +229,10 @@ bash launch.sh
 ```
 
 **Windows:**
-```powershell
-# Use PowerShell or Git Bash
+```bash
+# Windows (works with new Windows Terminal and Git Bash)
+./launch.sh
+
 # Or run directly:
 npm run dev
 ```
@@ -374,7 +384,15 @@ Feel free to reach out if you need help getting started!
 
 ## 📝 Changelog
 
-### v1.0.1 (Latest) ☕
+### v1.0.2 (Latest) ☕
+- 🔧 **Cross-Platform Improvements**
+- ✅ Fixed Windows compatibility issues with cleanup command
+- ✅ Enhanced README with better platform separation (Linux/Mac vs Windows)
+- ✅ Updated Windows commands to use `./` syntax (works with new Windows Terminal)
+- ✅ Cleaner development workflow without unnecessary process killing
+- ✅ Updated package-lock.json with latest dependencies
+
+### v1.0.1 ☕
 - ✨ **Enhanced Branding Release**
 - ✅ Beautiful custom coffee mug icon with cultural Portuguese identity
 - ✅ Professional React UI integration with coffee mug branding
