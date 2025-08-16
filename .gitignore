@@ -7,7 +7,10 @@ yarn-error.log*
 # Build outputs
 dist/
 release/
-build/
+build/*.icns
+build/*.ico
+build/*.png
+!build/README.md
 
 # Environment variables
 .env

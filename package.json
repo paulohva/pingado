@@ -14,7 +14,11 @@
     "build:main": "webpack --config webpack.main.js --mode production",
     "build:renderer": "webpack --config webpack.renderer.js --mode production",
     "pack": "electron-builder",
-    "dist": "npm run build && electron-builder"
+    "dist": "npm run build && electron-builder",
+    "dist:win": "npm run build && electron-builder --win",
+    "dist:mac": "npm run build && electron-builder --mac",
+    "dist:linux": "npm run build && electron-builder --linux",
+    "dist:all": "npm run build && electron-builder --win --mac --linux"
   },
   "keywords": [
     "network",
@@ -55,23 +59,99 @@
     "react-dom": "^18.2.0"
   },
   "build": {
-    "appId": "com.example.pingado",
+    "appId": "com.pingado.networkscanner",
     "productName": "Pingado",
+    "copyright": "Copyright © 2024 Pingado",
+    "asar": true,
     "directories": {
-      "output": "release"
+      "output": "release",
+      "buildResources": "build"
     },
     "files": [
       "dist/**/*",
-      "node_modules/**/*"
+      "!dist/*.d.ts"
+    ],
+    "extraResources": [
+      {
+        "from": "README.md",
+        "to": "README.md"
+      }
     ],
     "mac": {
-      "category": "public.app-category.utilities"
+      "category": "public.app-category.utilities",
+      "target": [
+        {
+          "target": "dmg",
+          "arch": ["x64", "arm64"]
+        },
+        {
+          "target": "zip",
+          "arch": ["x64", "arm64"]
+        }
+      ],
+      "darkModeSupport": true,
+      "hardenedRuntime": true,
+      "gatekeeperAssess": false
     },
     "win": {
-      "target": "nsis"
+      "target": [
+        {
+          "target": "nsis",
+          "arch": ["x64", "ia32"]
+        },
+        {
+          "target": "portable",
+          "arch": ["x64"]
+        }
+      ],
+      "publisherName": "Pingado",
+      "verifyUpdateCodeSignature": false
     },
     "linux": {
-      "target": "AppImage"
+      "target": [
+        {
+          "target": "AppImage",
+          "arch": ["x64"]
+        },
+        {
+          "target": "deb",
+          "arch": ["x64"]
+        },
+        {
+          "target": "rpm",
+          "arch": ["x64"]
+        }
+      ],
+      "category": "Network"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Pingado"
+    },
+    "dmg": {
+      "title": "Pingado ${version}",
+      "backgroundColor": "#667eea",
+      "window": {
+        "width": 540,
+        "height": 380
+      },
+      "contents": [
+        {
+          "x": 140,
+          "y": 150,
+          "type": "file"
+        },
+        {
+          "x": 400,
+          "y": 150,
+          "type": "link",
+          "path": "/Applications"
+        }
+      ]
     }
   }
 }
