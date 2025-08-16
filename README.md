@@ -1,6 +1,14 @@
-# Pingado - Network Scanner & Ping Utility
+# 🌐 Pingado - Cross-Platform Network Scanner & Ping Utility
 
-A cross-platform desktop application for network discovery and ping testing, built with Electron, React, and TypeScript.
+[![Release](https://img.shields.io/github/v/release/paulohva/pingado)](https://github.com/paulohva/pingado/releases)
+[![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux-lightgrey)](https://github.com/paulohva/pingado/releases)
+[![License](https://img.shields.io/github/license/paulohva/pingado)](LICENSE)
+
+A modern cross-platform desktop application for network discovery and ping testing, built with Electron, React, and TypeScript.
+
+> 🚀 **Ready for production use!** Download the latest release for your platform from the [Releases page](https://github.com/paulohva/pingado/releases).
+
+![Pingado Screenshot](https://via.placeholder.com/800x500/667eea/ffffff?text=Pingado+Network+Scanner)
 
 ## Features
 
@@ -10,6 +18,14 @@ A cross-platform desktop application for network discovery and ping testing, bui
 - 📊 **Network Statistics**: View detailed information about your network and scan results
 - 🎨 **Modern UI**: Beautiful, responsive interface with real-time updates
 - 💻 **Cross-Platform**: Works on Windows, macOS, and Linux
+
+## 🚀 Quick Start
+
+1. **Download** the appropriate installer for your platform from [Releases](https://github.com/paulohva/pingado/releases)
+2. **Install** by running the installer or extracting the portable version
+3. **Launch** Pingado from your Applications folder or desktop
+4. **Click "Scan Network"** to discover devices on your local network
+5. **Select an IP** and click "Ping" to test connectivity
 
 ## System Requirements
 
@@ -49,13 +65,31 @@ A cross-platform desktop application for network discovery and ping testing, bui
 - **Local network access** for network scanning functionality
 - **Firewall permissions** may be required for ping operations
 
-## Installation
+## 📥 Installation
 
-### Quick Start
+### 🚀 For End Users (Recommended)
+
+**Download pre-built applications from the [Releases page](https://github.com/paulohva/pingado/releases):**
+
+#### macOS
+- **Intel Macs**: Download `Pingado-X.X.X.dmg` 
+- **Apple Silicon (M1/M2/M3)**: Download `Pingado-X.X.X-arm64.dmg`
+- **Portable versions**: Download `.zip` files (no installation required)
+
+#### Windows
+- **Installer**: Download `Pingado Setup X.X.X.exe`
+- **Portable**: Download `Pingado X.X.X.exe`
+
+#### Linux
+- **AppImage**: Download `Pingado-X.X.X.AppImage` (universal)
+- **Debian/Ubuntu**: Download `.deb` package
+- **RedHat/CentOS**: Download `.rpm` package
+
+### 🛠️ For Developers
 
 1. **Clone or download this repository**
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/paulohva/pingado.git
    cd pingado
    ```
 
@@ -219,11 +253,14 @@ This will create platform-specific installers in the `release/` directory:
 - **macOS/Linux**: Uses `ping -c` command
 - **All Platforms**: Automatic network interface detection
 
-### Security
+### Security & Privacy
 
-- Context isolation enabled
-- Node integration disabled in renderer
-- Secure IPC communication through preload script
+- **Context isolation enabled** - Renderer process runs in isolated context
+- **Node integration disabled** - Prevents direct Node.js access from renderer
+- **Secure IPC communication** - All communication through preload script
+- **No data collection** - Application runs entirely locally
+- **No external connections** - Only local network scanning and ping
+- **Open source** - Full source code available for security review
 
 ## Development Scripts
 
@@ -359,10 +396,90 @@ npm run dev --verbose
 npm run build
 ```
 
-## Contributing
+## 🤝 Contributing
 
-Feel free to submit issues, feature requests, or pull requests to improve this application.
+We welcome contributions! Here's how you can help:
+
+### 🐛 Reporting Issues
+- Use the [GitHub Issues](https://github.com/paulohva/pingado/issues) page
+- Include your OS, version, and detailed steps to reproduce
+- Attach screenshots if relevant
+
+### 💡 Feature Requests
+- Check existing issues first to avoid duplicates
+- Describe the feature and its use case
+- Consider if it fits the project's scope
+
+### 🔧 Code Contributions
+1. Fork the repository
+2. Create a feature branch: `git checkout -b feature/amazing-feature`
+3. Make your changes and test thoroughly
+4. Commit with clear messages: `git commit -m 'feat: add amazing feature'`
+5. Push to your fork: `git push origin feature/amazing-feature`
+6. Open a Pull Request with a detailed description
+
+### 📋 Development Setup
+```bash
+# Clone your fork
+git clone https://github.com/yourusername/pingado.git
+cd pingado
+
+# Install dependencies
+npm install
+
+# Start development
+npm run dev
+```
+
+### 🧪 Testing
+- Test on your target platforms
+- Verify network scanning and ping functionality
+- Check the build process: `npm run build`
+
+Feel free to reach out if you need help getting started!
+
+## 📝 Changelog
+
+### v1.0.0 (Latest)
+- 🎉 **Initial Release**
+- ✅ Cross-platform network scanning and ping functionality
+- ✅ Modern React + TypeScript UI
+- ✅ Comprehensive build system for Windows, macOS, and Linux
+- ✅ Professional installers and portable versions
+- ✅ Complete documentation and troubleshooting guides
+
+### Upcoming Features
+- 🔄 Network monitoring with continuous ping
+- 📊 Enhanced network statistics and graphs  
+- 🎯 Custom ping intervals and packet sizes
+- 💾 Export scan results to CSV/JSON
+- 🌙 Dark mode theme option
+
+## 🏗️ Built With
+
+- **[Electron](https://electronjs.org/)** - Cross-platform desktop framework
+- **[React](https://reactjs.org/)** - UI library for building interfaces
+- **[TypeScript](https://typescriptlang.org/)** - Type-safe JavaScript
+- **[Webpack](https://webpack.js.org/)** - Module bundler and build tool
+- **[electron-builder](https://electron.build/)** - Application packaging and distribution
+
+## 📊 Project Stats
+
+![GitHub stars](https://img.shields.io/github/stars/paulohva/pingado)
+![GitHub forks](https://img.shields.io/github/forks/paulohva/pingado)
+![GitHub issues](https://img.shields.io/github/issues/paulohva/pingado)
+![GitHub last commit](https://img.shields.io/github/last-commit/paulohva/pingado)
 
 ## License
 
-MIT License - see LICENSE file for details.
+MIT License - see [LICENSE](LICENSE) file for details.
+
+---
+
+<div align="center">
+  <strong>Made with ❤️ for network administrators and developers</strong>
+  <br>
+  <a href="https://github.com/paulohva/pingado/releases">Download</a> • 
+  <a href="https://github.com/paulohva/pingado/issues">Report Bug</a> • 
+  <a href="https://github.com/paulohva/pingado/issues">Request Feature</a>
+</div>
