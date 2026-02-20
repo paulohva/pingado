@@ -54,6 +54,18 @@ module.exports = {
           },
         ],
       },
+      {
+        test: /\.(mp3|wav|m4a|ogg|mp4)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'assets/audio/',
+            },
+          },
+        ],
+      },
     ],
   },
   plugins: [
